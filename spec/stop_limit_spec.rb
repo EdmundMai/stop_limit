@@ -47,7 +47,7 @@ describe StopLimit do
 
 		it "sets the sale price" do 
 			stock.controlled_buy = 100.00
-			stock.sale_price.should eq(90.00)
+			stock.forced_sale_price.should eq(90.00)
 		end
 
 	end

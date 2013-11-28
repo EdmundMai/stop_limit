@@ -9,11 +9,11 @@ module StopLimit
 
   		def controlled_buy=(price)
   			self.send(:price=, price)
-  			self.instance_variable_set(:@sale_price, price * (100-DEFAULT_STOP_LIMIT_PERCENTAGE)/100.to_f)
+  			self.instance_variable_set(:@forced_sale_price, price * (100-DEFAULT_STOP_LIMIT_PERCENTAGE)/100.to_f)
   		end
 
- 			define_method("sale_price") do 
- 				self.instance_variable_get("@sale_price")
+ 			define_method("forced_sale_price") do 
+ 				self.instance_variable_get("@forced_sale_price")
   		end
 
 	  else
