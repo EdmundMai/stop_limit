@@ -1,5 +1,3 @@
-require 'observer'
-
 class BankAccount
 	attr_reader :balance
 
@@ -18,7 +16,6 @@ class BankAccount
 			raise "Insufficient funds"
 		else
 			@balance -= amount
-			puts "@balance = #{@balance}"
 		end
 	end
 
