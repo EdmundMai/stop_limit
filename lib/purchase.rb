@@ -8,8 +8,8 @@ class Purchase < Transaction
 	end
 
 	def execute
-		@bank_account.withdraw(@stock.price * @shares)
-		@buy_price = @stock.price
+		bank_account.withdraw(stock.price * shares)
+		@buy_price = stock.price
 	end
 
 end

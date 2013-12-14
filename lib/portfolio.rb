@@ -17,7 +17,7 @@ class Portfolio
 	end
 
 	def execute_pending_transactions!
-		@transactions.each { |transaction| transaction.execute }
+		transactions.each { |transaction| transaction.execute }
 		@transactions = []
 	end
 

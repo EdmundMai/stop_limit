@@ -9,11 +9,11 @@ class Sale < Transaction
 	end
 
 	def execute
-		@bank_account.deposit(investment_return)
+		bank_account.deposit(investment_return)
 	end
 
 	def investment_return
-		(@sale_price * @shares) - (@purchase.buy_price * @purchase.shares)
+		(sale_price * shares) - (purchase.buy_price * purchase.shares)
 	end
 
 end
