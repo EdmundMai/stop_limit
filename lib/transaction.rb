@@ -4,6 +4,7 @@ class Transaction
 
 
 	def execute
+    raise "Execute method not implemented."
 	end
 
 

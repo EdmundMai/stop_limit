@@ -6,8 +6,8 @@ require_relative 'portfolio'
 require_relative 'stock'
 
 
-portfolio = Portfolio.new('conservative')
-bank_account = BankAccount.new(10000.00)
+portfolio = Portfolio.new(name: 'conservative')
+bank_account = BankAccount.new(balance: 10000.00)
 portfolio.add_bank_account(bank_account)
 
 def stock_price_feed(stock)

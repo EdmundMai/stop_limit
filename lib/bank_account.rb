@@ -3,8 +3,8 @@ class BankAccount
 
 	RECORDS = File.basename(Dir.getwd)
 
-	def initialize(balance)
-		@balance = balance
+	def initialize(args = {})
+		@balance = args[:balance]
 	end
 
 	def deposit(amount)

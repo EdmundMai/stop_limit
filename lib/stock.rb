@@ -5,8 +5,6 @@ class Stock
 	attr_reader :price
 	attr_reader :ticker
 
-	YAHOO_QUOTES_API = 
-
 	def initialize(ticker)
 		@ticker = ticker
 	end

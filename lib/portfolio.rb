@@ -2,8 +2,8 @@ class Portfolio
 	attr_accessor :name
 	attr_reader :bank_accounts, :transactions
 
-	def initialize(name)
-		@name = name
+	def initialize(args = {})
+		@name = args[:name]
 		@bank_accounts = []
 		@transactions = []
 	end

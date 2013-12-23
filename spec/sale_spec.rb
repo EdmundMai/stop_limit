@@ -8,7 +8,7 @@ describe Sale do
 			sale_price = 300
 			sale_shares = 1
 			bank_account = double('Bank Account')
-			sale = Sale.new(purchase, sale_price, sale_shares, bank_account)
+			sale = Sale.new(purchase: purchase, sale_price: sale_price, sale_shares: sale_shares, bank_account: bank_account)
 			sale.sale_price.should eq(300)
 		end
 
@@ -17,7 +17,7 @@ describe Sale do
 			sale_price = 300
 			sale_shares = 1
 			bank_account = double('Bank Account')
-			sale = Sale.new(purchase, sale_price, sale_shares, bank_account)
+			sale = Sale.new(purchase: purchase, sale_price: sale_price, sale_shares: sale_shares, bank_account: bank_account)
 			sale.purchase.should eq(purchase)
 		end
 
@@ -26,7 +26,7 @@ describe Sale do
 			sale_price = 300
 			sale_shares = 1
 			bank_account = double('Bank Account')
-			sale = Sale.new(purchase, sale_price, sale_shares, bank_account)
+			sale = Sale.new(purchase: purchase, sale_price: sale_price, sale_shares: sale_shares, bank_account: bank_account)
 			sale.shares.should eq(sale_shares)
 		end
 
@@ -35,7 +35,7 @@ describe Sale do
 			sale_price = 300
 			sale_shares = 1
 			bank_account = double('Bank Account')
-			sale = Sale.new(purchase, sale_price, sale_shares, bank_account)
+			sale = Sale.new(purchase: purchase, sale_price: sale_price, sale_shares: sale_shares, bank_account: bank_account)
 			sale.bank_account.should eq(bank_account)
 		end
 	end
@@ -46,7 +46,7 @@ describe Sale do
 			sale_price = 300
 			sale_shares = 1
 			bank_account = double('Bank Account')
-			sale = Sale.new(purchase, sale_price, sale_shares, bank_account)
+			sale = Sale.new(purchase: purchase, sale_price: sale_price, sale_shares: sale_shares, bank_account: bank_account)
 			sale.investment_return.should == ((sale.sale_price * sale.shares) - (purchase.buy_price * purchase.shares))
 		end
 	end
@@ -57,7 +57,7 @@ describe Sale do
 			sale_price = 300
 			sale_shares = 1
 			bank_account = double('Bank Account')
-			sale = Sale.new(purchase, sale_price, sale_shares, bank_account)
+			sale = Sale.new(purchase: purchase, sale_price: sale_price, sale_shares: sale_shares, bank_account: bank_account)
 			investment_return = (sale.sale_price * sale.shares) - (purchase.buy_price * purchase.shares)
 			bank_account.should_receive(:deposit).with(investment_return)
 			sale.execute

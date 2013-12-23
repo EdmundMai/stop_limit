@@ -8,13 +8,13 @@ describe Purchase do
 			stock = double('Stock', price: 10)
 			bank_account = double('Bank Account')
 			shares = 100
-			purchase = Purchase.new(stock, shares, bank_account)
+			purchase = Purchase.new(stock: stock, shares: shares, bank_account: bank_account)
 		}
 		it 'sets the stock' do
 			stock = double('Stock', price: 10)
 			bank_account = double('Bank Account')
 			shares = 100
-			purchase = Purchase.new(stock, shares, bank_account)
+			purchase = Purchase.new(stock: stock, shares: shares, bank_account: bank_account)
 			purchase.stock.should eq(stock)
 		end
 
@@ -22,7 +22,7 @@ describe Purchase do
 			stock = double('Stock', price: 10)
 			bank_account = double('Bank Account')
 			shares = 100
-			purchase = Purchase.new(stock, shares, bank_account)
+			purchase = Purchase.new(stock: stock, shares: shares, bank_account: bank_account)
 			purchase.bank_account.should eq(bank_account)
 		end
 
@@ -30,7 +30,7 @@ describe Purchase do
 			stock = double('Stock', price: 10)
 			bank_account = double('Bank Account')
 			shares = 100
-			purchase = Purchase.new(stock, shares, bank_account)
+			purchase = Purchase.new(stock: stock, shares: shares, bank_account: bank_account)
 			purchase.shares.should eq(100)
 		end
 
@@ -41,7 +41,7 @@ describe Purchase do
 			stock = double('Stock', price: 1)
 			bank_account = double('Bank Account')
 			shares = 100
-			purchase = Purchase.new(stock, shares, bank_account)
+			purchase = Purchase.new(stock: stock, shares: shares, bank_account: bank_account)
 			bank_account.should_receive(:withdraw).with(stock.price * shares)
 			purchase.execute
 		end
@@ -50,7 +50,7 @@ describe Purchase do
 			stock = double('Stock', price: 1)
 			bank_account = double('Bank Account')
 			shares = 100
-			purchase = Purchase.new(stock, shares, bank_account)
+			purchase = Purchase.new(stock: stock, shares: shares, bank_account: bank_account)
 			bank_account.should_receive(:withdraw)
 			purchase.execute
 			purchase.buy_price.should == stock.price

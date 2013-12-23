@@ -1,11 +1,11 @@
 class Sale < Transaction
 	attr_reader :sale_price, :purchase, :shares, :bank_account
 
-	def initialize(purchase, sale_price, sale_shares, bank_account)
-		@sale_price = sale_price
-		@shares = sale_shares
-		@purchase = purchase
-		@bank_account = bank_account
+	def initialize(args = {})
+		@sale_price = args[:sale_price]
+		@shares = args[:sale_shares]
+		@purchase = args[:purchase]
+		@bank_account = args[:bank_account]
 	end
 
 	def execute
